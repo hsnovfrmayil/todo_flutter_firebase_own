@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "5124016620",
+    "project_id": "todoma",
+    "storage_bucket": "todoma.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5124016620:android:983ae8ecbf5a6913e218c9",
+        "android_client_info": {
+          "package_name": "com.example.data_statement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "5124016620-97oaa1dlnhr3eetntcju7ij3h6oig9cb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyTKSRk6RVQvOnO60bFnjJfqCFTQEI38w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "5124016620-97oaa1dlnhr3eetntcju7ij3h6oig9cb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
