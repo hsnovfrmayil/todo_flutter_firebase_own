@@ -50,21 +50,22 @@ class LoginPage extends ConsumerWidget {
                 ),
                 sizedBoxHeight(25),
                 MyButton(
-                    onTap: () async {
-                      try {
-                        await authService.signInWithEmailandPassword(
-                            emailController.text, passwordController.text);
-                      } catch (e) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              e.toString(),
-                            ),
+                  onTap: () async {
+                    try {
+                      await authService.signInWithEmailandPassword(
+                          emailController.text, passwordController.text);
+                    } catch (e) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            e.toString(),
                           ),
-                        );
-                      }
-                    },
-                    text: "Sign In"),
+                        ),
+                      );
+                    }
+                  },
+                  text: "Sign In",
+                ),
                 sizedBoxHeight(50),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

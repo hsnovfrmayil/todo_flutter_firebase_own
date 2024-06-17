@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:data_statement/pages/home.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../services/image_service.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -70,7 +68,7 @@ class SettingsPage extends StatelessWidget {
                                         ),
                                       ),
                                     )
-                                  : Icon(Icons.person);
+                                  : const Icon(Icons.person);
                             },
                           ),
                           Positioned(
@@ -109,9 +107,16 @@ class SettingsPage extends StatelessWidget {
                                     .set({
                                   "imageLink": downloadLink,
                                 }, SetOptions(merge: true));
+                                fireStore
+                                    .collection("alluser")
+                                    .doc(FirebaseAuth
+                                        .instance.currentUser!.email)
+                                    .update({
+                                  "imageLink": downloadLink,
+                                });
                                 print(FirebaseAuth.instance.currentUser!.email);
                               },
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.add_a_photo,
                                 size: 30,
                                 color: Colors.black,
@@ -128,15 +133,15 @@ class SettingsPage extends StatelessWidget {
                         stream: imageLink,
                         builder: (context, snapshot) {
                           if (snapshot.hasError) {
-                            return Text("user");
+                            return const Text("user");
                           }
                           if (snapshot.connectionState ==
                               ConnectionState.waiting) {
-                            return Text("user");
+                            return const Text("user");
                           }
                           return Text(
                             snapshot.requireData.docs[0]['email'],
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),

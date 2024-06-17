@@ -3,7 +3,6 @@ import 'package:data_statement/pages/message.dart';
 import 'package:data_statement/pages/settings.dart';
 import 'package:data_statement/provider/service_provider.dart';
 import 'package:data_statement/services/auth/auth_service.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

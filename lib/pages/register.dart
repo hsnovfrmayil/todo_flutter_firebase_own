@@ -19,7 +19,6 @@ class RegisterPage extends ConsumerWidget {
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
   final authService = AuthService();
- 
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -84,26 +83,26 @@ class RegisterPage extends ConsumerWidget {
                       ),
                       sizedBoxHeight(25),
                       MyButton(
-                          onTap: () async {
-                            if (passwordController.text !=
-                                confirmPasswordController.text) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text("Passwords do not match!"),
-                                ),
-                              );
-                              return;
-                            }
-                            try {
-                              await authService.signUpWithEmailandPassword(
-                                  emailController.text,
-                                  passwordController.text);
-                            } catch (e) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(content: Text(e.toString())));
-                            }
-                          },
-                          text: "Sign Up"),
+                        onTap: () async {
+                          if (passwordController.text !=
+                              confirmPasswordController.text) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text("Passwords do not match!"),
+                              ),
+                            );
+                            return;
+                          }
+                          try {
+                            await authService.signUpWithEmailandPassword(
+                                emailController.text, passwordController.text);
+                          } catch (e) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text(e.toString())));
+                          }
+                        },
+                        text: "Sign Up",
+                      ),
                       sizedBoxHeight(50),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
